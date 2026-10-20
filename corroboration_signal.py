@@ -25,7 +25,7 @@ def _source(url: str, digest: str) -> dict:
     gist = re.fullmatch(r"https://gist\.githubusercontent\.com/([A-Za-z0-9-]{1,39})/[0-9a-f]{32}/raw/[0-9a-f]{40}/([A-Za-z0-9_.~/-]+)", url)
     match = raw or gist
     _require(match is not None, "commit-pinned public source required")
-    _require(all(part not in ("", ".", "..") for part in match[2].split("/")), "noncanonical source path")
+    _require(all(part not in ("", ".", "..") for part in url.split("/")[3:]), "noncanonical source path")
     _require(isinstance(digest, str) and re.fullmatch(r"[0-9a-f]{64}", digest) is not None, "invalid source hash")
     return {"url": url, "sha256": digest, "publisher": "github:" + match[1].lower()}
 

@@ -1,6 +1,6 @@
 {
   "source": "corroboration_signal.py",
-  "source_sha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+  "source_sha256": "0a3f161b48f07a995751df27c9b8f75b27594affc08b055eff4ec6ad9a214730",
   "genvm_release": "v0.2.12",
   "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
   "stdlib": "py-lib-genlayer-std:11rhn002yfajawsz7fai6mykznbxkxs6l91iskj5cm82c92qhy3v",
@@ -26,16 +26,33 @@
   },
   "live_consensus_tested": false,
   "deployment": {
+    "at": "2026-10-20T22:20:31.219Z",
+    "profileSeq": 10,
     "title": "CorroborationSignal",
     "workId": "profile10-ic-corroboration-signal",
-    "contractAddress": "0x52B5975C00954C6aDb80018411145a6EC22d9793",
-    "transactionHash": "0x787d91e4552cac90ea5b2a39193c6b47fb45115b0f96b50ebb3e08d0822de0d0",
+    "version": "namespace-path-v2",
+    "supersedes": {
+      "contractAddress": "0x52B5975C00954C6aDb80018411145a6EC22d9793",
+      "sourceSha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264"
+    },
+    "existingSubmissionIdPrefix": "4cfc4073",
+    "contractAddress": "0x913FE1F209b107DE708D91d8dD8E38246b61513f",
+    "transactionHash": "0x51b59ff60a9086f6460aebe6b829ff61796e3eb9567883b9cf97ea09c1f674f0",
+    "sourceSha256": "0a3f161b48f07a995751df27c9b8f75b27594affc08b055eff4ec6ad9a214730",
+    "onchainSourceSha256": "0a3f161b48f07a995751df27c9b8f75b27594affc08b055eff4ec6ad9a214730",
     "network": "GenLayer Studio",
     "chainId": 61999,
-    "sourceSha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
-    "constructorArgs": [],
     "state": "FINALIZED",
-    "executionResult": "SUCCESS"
-  },
-  "live_scope": "constructor deployment only; source classification/challenge external I/O mocked in direct tests"
+    "executionResult": "SUCCESS",
+    "value": "0",
+    "constructorArgs": [],
+    "publicSourceUpdateSent": false,
+    "submissionUpdateSent": false,
+    "doesNotConsumeNewWorkSlot": true,
+    "executionMode": "NORMAL",
+    "leaderOnly": false,
+    "consensusResult": "MAJORITY_AGREE",
+    "finalizedVerifiedAt": "2026-10-20T22:21:18.878Z",
+    "liveBusinessFlowVerified": false
+  }
 }

@@ -1,0 +1,39 @@
+{
+  "reviewer": "/root/genlayer_contract_pair02",
+  "reviewed_at": "2026-10-20T21:46:09.553957+00:00",
+  "reviewer_is_patch_author": false,
+  "reviewer_is_original_contract_author": true,
+  "status": "closed_for_local_namespace_patch",
+  "scope": "Only local namespace predicate patch and recorded actual regression/full SDK output. Read-only review; no source edits, test rerun, wallet, RPC or deployment.",
+  "local_source": "corroboration_signal.py",
+  "local_source_sha256": "0a3f161b48f07a995751df27c9b8f75b27594affc08b055eff4ec6ad9a214730",
+  "previous_deployed_source_sha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+  "existing_deployed_contract": "0x52B5975C00954C6aDb80018411145a6EC22d9793",
+  "local_fix_deployed": false,
+  "existing_deployed_artifact_unchanged": true,
+  "local_publication_updated": false,
+  "local_submission_updated": false,
+  "findings": [],
+  "exact_patch_proof": {
+    "new_expression": "url.split(\"/\")[3:]",
+    "old_expression": "match[2].split(\"/\")",
+    "reconstructed_previous_bytes_sha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+    "matches_recorded_old_deployed_source_sha256": true,
+    "implication": "The source bytes differ only by this single predicate expression; ABI/state machine/content hash logic are unchanged."
+  },
+  "observations": [
+    "Regex first checks the exact allowed host/40-hex locator and ASCII shape, then all components after the hostname are checked via split('/')[3:], rejecting dot-only repository as well as dot file paths.",
+    "For CorroborationSignal the publisher capture remains match[1]; no capture-group meaning changes.",
+    "Raw and existing supported gist URL shapes remain otherwise unchanged; exact byte SHA verification is retained.",
+    "Each pair of actual public-API dot-repository regressions failed on old local source then passed in the current full suite."
+  ],
+  "recorded_verification": {
+    "genuine_red_tests_failed": 2,
+    "full_direct_tests_passed": 26,
+    "full_semantic_lint_schema_exit0": true,
+    "constructor_args": [],
+    "tests_rerun_by_reviewer": false
+  },
+  "old_review_status": "Any old full-source review corresponds to the previous source hash and is historical. This narrow addendum reviews the local fix only, not a new complete audit.",
+  "limits": "Local correction is not applied to the recorded onchain contract or public repository. No content-integrity bypass or live exploit is claimed."
+}

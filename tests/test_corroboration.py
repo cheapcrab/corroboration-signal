@@ -20,6 +20,15 @@ def deploy(direct_vm,direct_deploy):
 def request(c,urls=URLS,hashes=HASHES):
     return c.request(CLAIM,urls,hashes,300,600)
 
+
+@pytest.mark.parametrize('repo',['.','..'])
+def test_dot_repository_cannot_change_the_commit_namespace(direct_vm,direct_deploy,repo):
+    c=deploy(direct_vm,direct_deploy)
+    urls=list(URLS)
+    urls[0]='https://raw.githubusercontent.com/alpha/'+repo+'/'+'a'*40+'/main/release.txt'
+    with direct_vm.expect_revert('noncanonical'):
+        request(c,urls)
+
 def serve(direct_vm,urls=URLS,docs=DOCS):
     for url,body in zip(urls,docs):
         direct_vm.mock_web(re.escape(url),{"status":200,"body":body})

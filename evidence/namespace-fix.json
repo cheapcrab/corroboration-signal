@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-20T21:38:14.171Z",
+  "profileSeq": 10,
+  "slug": "corroboration-signal",
+  "previous_deployed_source_sha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+  "corrected_local_source_sha256": "0a3f161b48f07a995751df27c9b8f75b27594affc08b055eff4ec6ad9a214730",
+  "existing_deployed_contract": "0x52B5975C00954C6aDb80018411145a6EC22d9793",
+  "local_tests_passed": 26,
+  "local_full_sdk_checks": {
+    "tests": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "lint": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "schema": {
+      "exit_code": 0,
+      "passed": true
+    }
+  },
+  "red_log": "evidence/tdd-dot-repository-red.log",
+  "status": "local_fix_green_pending_onchain_and_public_repository_update",
+  "onchainUpdateSent": false,
+  "publicSourceUpdateSent": false,
+  "submissionUpdateSent": false,
+  "scope": "Reject dot-only repository segments in the complete URL path. Locked content byte SHA256 was and remains verified; no content hash bypass claimed."
+}

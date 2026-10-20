@@ -1,5 +1,5 @@
-........................                                                 [100%]
-24 passed in 1.80s
+..........................                                               [100%]
+26 passed in 1.73s
 WARNING: File `gltest.config.yaml` not found in the current directory, using default config, create a `gltest.config.yaml` file to manage multiple networks
 INFO: Clearing artifacts directory: artifacts
 INFO: Using the following configuration:
