@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-20T19:51:53.814Z",
+  "title": "CorroborationSignal",
+  "workId": "profile10-ic-corroboration-signal",
+  "contractAddress": "0x52B5975C00954C6aDb80018411145a6EC22d9793",
+  "transactionHash": "0x787d91e4552cac90ea5b2a39193c6b47fb45115b0f96b50ebb3e08d0822de0d0",
+  "network": "GenLayer Studio",
+  "chainId": 61999,
+  "sourceSha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+  "constructorArgs": [],
+  "state": "FINALIZED",
+  "executionResult": "SUCCESS",
+  "receipt": {
+    "hash": "0x787d91e4552cac90ea5b2a39193c6b47fb45115b0f96b50ebb3e08d0822de0d0",
+    "status": "FINALIZED",
+    "result": 6,
+    "resultName": "MAJORITY_AGREE",
+    "from": "0xDdE8B1678Df716c926a2952E5b56fE99e71De50d",
+    "to": "0x52B5975C00954C6aDb80018411145a6EC22d9793",
+    "value": 0,
+    "executionMode": "NORMAL",
+    "leaderOnly": false,
+    "votes": [
+      "IDLE",
+      "AGREE",
+      "IDLE",
+      "AGREE",
+      "AGREE"
+    ],
+    "sourceBytesHash": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+    "executionResults": [
+      {
+        "mode": "leader",
+        "result": "SUCCESS",
+        "vote": null,
+        "cancellationCode": null,
+        "nonfatal": false
+      },
+      {
+        "mode": "validator",
+        "result": "ERROR",
+        "vote": "idle",
+        "cancellationCode": "CONSENSUS_VALIDATOR_QUORUM_REACHED",
+        "nonfatal": true
+      }
+    ],
+    "interpretation": "Leader SUCCESS with majority AGREE; idle validator was cancelled nonfatally after quorum, not a failed contract execution."
+  },
+  "liveScope": "Constructor deployment only. Full public-source observation and counter-source challenge not live-tested."
+}

@@ -1,0 +1,41 @@
+{
+  "source": "corroboration_signal.py",
+  "source_sha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+  "genvm_release": "v0.2.12",
+  "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+  "stdlib": "py-lib-genlayer-std:11rhn002yfajawsz7fai6mykznbxkxs6l91iskj5cm82c92qhy3v",
+  "packages": {
+    "genlayer-test": "0.29.2",
+    "genvm-linter": "0.11.0",
+    "cloudpickle": "3.1.2",
+    "pytest": "9.1.1"
+  },
+  "checks": {
+    "tests": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "lint": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "schema": {
+      "exit_code": 0,
+      "passed": true
+    }
+  },
+  "live_consensus_tested": false,
+  "deployment": {
+    "title": "CorroborationSignal",
+    "workId": "profile10-ic-corroboration-signal",
+    "contractAddress": "0x52B5975C00954C6aDb80018411145a6EC22d9793",
+    "transactionHash": "0x787d91e4552cac90ea5b2a39193c6b47fb45115b0f96b50ebb3e08d0822de0d0",
+    "network": "GenLayer Studio",
+    "chainId": 61999,
+    "sourceSha256": "ae03afe0a3bba62f352961d5a90be48ed3cdb58b8ee8da98f34d1bbc886a9264",
+    "constructorArgs": [],
+    "state": "FINALIZED",
+    "executionResult": "SUCCESS"
+  },
+  "live_scope": "constructor deployment only; source classification/challenge external I/O mocked in direct tests"
+}

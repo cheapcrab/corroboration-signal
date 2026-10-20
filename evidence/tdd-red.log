@@ -1,0 +1,54 @@
+WARNING: File `gltest.config.yaml` not found in the current directory, using default config, create a `gltest.config.yaml` file to manage multiple networks
+INFO: Using the following configuration:
+INFO:   RPC URL: http://127.0.0.1:4000/api
+INFO:   Selected Network: localnet
+INFO:   Available networks: ['localnet', 'studionet', 'testnet_asimov', 'testnet_bradbury']
+INFO:   Selected chain type: localnet
+INFO:   Available chains: localnet, studionet, testnet_asimov, testnet_bradbury
+INFO:   Contracts directory: contracts
+INFO:   Artifacts directory: artifacts
+INFO:   Environment: .env
+INFO:   Default wait interval: 3000 ms
+INFO:   Default wait retries: 50
+INFO:   Leader only mode: False
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_observation_binds_sources_claim_time_and_contract ____________
+
+direct_vm = VMContext(_sender=b'\xdc\x18\xaa=\xb8\xbc\x91\xa6\xe3\x90\xa3^}\x08\x11$o\xf3\xab\x01', _origin=None, _contract_addres...m_mocks_hit=set(), _live_web_handler=None, _live_llm_handler=None, _gl_call_hook=None, _traces=[], _trace_enabled=True)
+direct_deploy = <function direct_deploy.<locals>._deploy at 0x000001EDF7B22D40>
+
+    def test_observation_binds_sources_claim_time_and_contract(direct_vm,direct_deploy):
+        """Catches missing substantive source consensus or context/time binding."""
+        c=deploy(direct_vm,direct_deploy)
+>       rid=observed(direct_vm,c)
+            ^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_corroboration.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_corroboration.py:33: in observed
+    rid=request(c)
+        ^^^^^^^^^^
+tests\test_corroboration.py:21: in request
+    return c.request(CLAIM,urls,hashes,300,600)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\tooling\.venv\Lib\site-packages\gltest\direct\loader.py:432: in _wrapped
+    return attr(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_contract_corroboration_signal.CorroborationSignal object at 0x000001EDF7C8DA00>
+claim = 'The 1.2 release includes a public JSON API.'
+urls = ['https://raw.githubusercontent.com/alpha/notes/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/release.txt', 'https://raw.gi...bbb/release.txt', 'https://raw.githubusercontent.com/gamma/notes/cccccccccccccccccccccccccccccccccccccccc/release.txt']
+sha256s = ['b7c0be32a8201375093662f1f9dd82e24d84266b2e533c7233de28a6a0a1e6e9', 'd78cafc0d1f2a48e9cd43b3146640f033e3c529fca73ee6a6f8a8c6bc3083aab', '032f2f1e2e3d12c6a5948a7af11b37946d1ec00ff575d540610ff7afe12e8cba']
+observation_seconds = 300, ttl_seconds = 600
+
+    @gl.public.write
+    def request(self, claim: str, urls: list[str], sha256s: list[str], observation_seconds: int, ttl_seconds: int) -> str:
+>       raise gl.vm.UserError("NOT_IMPLEMENTED")
+E       genlayer.gl.vm.UserError: UserError(message='NOT_IMPLEMENTED')
+
+corroboration_signal.py:10: UserError
+=========================== short test summary info ===========================
+FAILED tests/test_corroboration.py::test_observation_binds_sources_claim_time_and_contract
+1 failed in 0.59s
